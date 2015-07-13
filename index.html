@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fibbing, hybrid SDN, routing, policies">
+  <meta name="author" content="Stefano Vissicchio" >
+  <title>Fibbing: Central Control Over Distributed Routing</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/custom.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="text-center lead">
+        <h3><span class="text-danger">Fibbing: Small Lies for Better Networks</span></h3>
+      </div>
+
+      <p></p>
+
+      <p></p>
+
+      <div class="jumbotron voffset4">
+        <p class="text-left lead"><b>Fibbing</b> is an architecture that enables central control over distributed routing. This way, it combines the advantages of SDN (flexibility, expressivity, and manageability) and traditional (robustness, and scalability) approaches.
+
+        <p class="voffset4"><b>Fibbing</b> introduces fake nodes and links into an underlying link- state routing protocol, so that routers compute their own forwarding tables based on the augmented topology. Fibbing is expressive, and readily supports flexible load balancing, traffic engineering, and backup routes. Fibbing works with any unmodified routers speaking OSPF.
+
+        <p class="text-center voffset5"><img width="350" src="pictures/gadget_firewall_right.jpg"></p>
+        <br />
+
+        <p class="text-center">
+          <a class="btn btn-primary" href="#papers" role="button">Read the papers</a>
+          <a class="btn btn-info" href="#presentations" role="button">Look at the presentations</a>
+          <a class="btn btn-success" href="https://github.com/fibbing/" role="button">Get the code</a>
+        </p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Current networks are hard to configure, operate and manage.</h4>
+
+          <p> To configure networks, operators need to manually configure each device by tweaking parameters influencing the behavior of distributed protocols. In addition, used network protocols tend to be inflexible. For example, protocols (IGPs) used for intra-domain routing computes paths as shortest-path over a shared weighted graph: This prevents operators from using arbitrary paths for different traffic flows. As a result, network resources are often used inefficiently, and few guarantees are offered on the final quality of service experienced by end users. Moreover, configuration processes aiming to optimize network performance is long and error-prone, and this degrades network reliability. It is indeed estimated that 50 to 80% of network disruptions are due to manual configurations.
+
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Software-Defined Networking is challenging</h4>
+
+          <p> Software-Defined Networking (SDN) promises to significantly improve network manageability by enabling direct, and centralized control over the network forwarding state via a well-defined Application Programming Interface (API). Fulfilling this promise though is a challenge for network operators as it often requires heavy modifications to their current network architecture, including: i) equipment upgrades, as the vast majority of the installed base of network equipments (e.g., routers) do not support SDN protocols; ii) new management, monitoring and provisioning systems; but also iii) the need for operators training as managing and debugging a SDN network requires essentially completely different skill sets. Finally, full centralization of network control comes with scalability and robustness challenges.
+
+        </div>
+      </div>
+
+      <div class="text-center lead">
+        <h4><span class="text-danger">Fibbing achieves SDN advantages today, on unmodified OSPF routers,</span>
+            <br/>
+            <span class="text-danger">while keeping robustness and scalability of distributed protocols</span></h4>
+      </div>
+
+     <p class="text-center voffset5"><img width="900" src="pictures/comparison_table.jpg"></p>
+     <br />
+
+     <div class="text-center lead">
+        <h4>We showed Fibbing potential through a case study</h4>
+      </div>
+
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Fibbing improves routing flexibility</h4>
+
+          <p>We run our Fibbing controller in a small network with 4 routers. By introducing one fake node and one fake link (at time 16), it has been able to forward different flows destined to the same router over different paths. As a consequence, all links are utilized and the total available bandwidth is increased.</p>
+
+          <p>This performance improvement would have been <em>impossible with IGP</em>. Also, <em>Fibbing avoids control-plane complexities and data-plane overhead</em> of tunnelling (e.g., MPLS-based) solutions.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="text-center"><img src="pictures/case_study_bw.jpg" alt="" width="450"></div>
+        </div>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Fibbing mitigates robustness concerns</h4>
+
+          <p>We successively failed controller replicas and network links, and we verified Fibbing reaction to and recovery from failures. Our experiment confirmed that (i) replica failures have no impact on forwarded flows (until there is one replica still running), and (ii) Fibbing can adjust forwarding paths upon failures in about 1 second. Moreover, by delegating control to the underlying IGP, Fibbing can implement fail-close (flow 1) and fail-open (flow 2) semantics upon partitions, that is, denying connectivity or keeping it as long as possible. Both fail-close and fail-open semantics are enforced within few seconds.</p>
+
+        </div>
+        <div class="col-lg-6">
+          <div class="text-center voffset4"><img src="pictures/case_study_robustness.jpg" alt="" width="450"></div>
+        </div>
+      </div>
+
+      <section id="faq">
+        <div class="page-header">
+          <h3>Frequently Asked Questions</h3>
+        </div>
+
+          <dl>
+            <dt><p>Is Fibbing a long-term solution? <em>Yes</em></p></dt>
+
+            <dd><p>We believe Fibbing is here to stay. In the short run, Fibbing offers programmability and is easy to deploy, at very little cost. A network that ultimately needs even greater flexibility could deploy finer-grained SDN functionality at the edge, and solutions like Fibbing in the core. By combining the best of centralized and distributed routing, Fibbing fits the needs of the network core (flexibility, robustness, low overhead) better than current forwarding paradigms.
+          </dl>
+
+          <dl>
+            <dt><p>Does Fibbing makes networks harder to debug? <em>No</em></p></dt>
+
+            <dd><p>Fibbing relies on ``tried and true'' protocols. This has several implications. First, Fibbing routing matches the current mental model of operators, a major advantage with respect to other SDN proposals. Moreover, Fibbing is compatible with any existing management, monitoring, and debugging tools. Finally, the Fibbing controller can expose a higher-level interface for debugging, including a mapping between the injected lies and their usage (matched requirements and how).</p>
+         </dl>
+
+          <dl>
+            <dt><p>Does Fibbing sum the complexities of centralized and distributed approaches? <em>No</em></p></dt>
+
+            <dd><p>Fibbing uses the underlying IGP in a very simple way. The IGP output is easy to predict and provides the controller with a powerful API to program routers. As a result, the design of the Fibbing controller is significantly simpler than for existing SDN controllers since heavy tasks such as path computation and topology maintenance are offloaded to the routers. Even basic primitives for controller replication and replica consistency are mainly delegated to current distributed routing protocols.</p>
+         </dl>
+
+          <dl>
+            <dt><p>Does Fibbing impact security? <em>No</em></p></dt>
+
+            <dd><p>The lies introduced by the Fibbing controller can easily be authenticated, like using MD5-based authentication.</p>
+         </dl>
+
+          <dl>
+            <dt><p>Does Fibbing support service chaining and middleboxing? <em>Partially</em></p></dt>
+
+            <dd><p>Fibbing can only program loop-free paths. However, forwarding loops can be encountered when steering traffic through a chain of middleboxes. These requirements \emph{can} be satisfied in Fibbing with local support from routers to break the loops.  For instance, a router could match on the input interface in addition to the destination IP address using policy-based routing, a feature widely available on existing routers and provisioned centrally using BGP flowspec. Alternatively, middlebox traffic steering could be implemented through SDN functionality at the network edge, while still using Fibbing in the core.</p>
+         </dl>
+
+
+      <section id="papers">
+        <div class="page-header">
+          <h3>Publications</h3>
+        </div>
+
+        <blockquote>
+          <p><a href="files/sig15.pdf">Central Control Over Distributed Routing</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/">SIGCOMM</a>, London, UK, Aug 2015. (<a href="files/sig15.bib">bibtex</a>)</p>
+          <p class="text-right text-muted">by Stefano Vissicchio, Olivier Tilmans, Laurent Vanbever, and Jennifer Rexford</p>
+        </blockquote>
+
+        <hr>
+
+        <blockquote>
+          <p><a href="files/hotnets14.pdf">Sweet Little Lies: Fake Topologies for Flexible Routing</a>, <a href="http://conferences.sigcomm.org/hotnets/2014/">HotNets</a>, Los Angeles, CA, Oct 2014. (<a href="files/hotnets14.bib">bibtex</a>)</p>
+          <p class="text-right text-muted">by Stefano Vissicchio, Laurent Vanbever, and Jennifer Rexford</p>
+        </blockquote>
+      </section>
+
+      <section id="presentations">
+        <div class="page-header">
+          <h3>Presentations</h3>
+        </div>
+
+        <blockquote>
+          <p><a href="files/slides_hotnets14.pdf">HotNets 2014 presentation</a> (October 2014)</p>
+          <p class="text-right text-muted">by Stefano Vissicchio</p>
+        </blockquote>
+
+        <hr>
+
+      <section id="people">
+        <div class="page-header">
+          <h3>People</h3>
+        </div>
+
+        <ul>
+          <li><a href="http://inl.info.ucl.ac.be/svissicchio">Stefano Vissicchio</a>, Universite catholique de Louvain, <code>stefano dot vissicchio at uclouvain dot be</code></li>
+          <li><a href="http://inl.info.ucl.ac.be/otilmans">Olivier Tilmans</a>, Universite catholique de Louvain, <code>olivier dot tilmans at uclouvain dot be</code></li>
+
+          <li><a href="http://www.vanbever.eu">Laurent Vanbever</a>, ETH Z&uuml;rich, <code>lvanbever at ethz dot ch</code></li>
+          <li><a href="https://www.cs.princeton.edu/~jrex/">Jennifer Rexford</a>, Princeton University, <code>jrex at cs dot princeton dot edu</code></li>
+        </ul>
+      </section>
+
+<div class="footer voffset4">
+  <p class="text-right">Webmaster: <a href="http://www.vanbever.eu">Laurent Vanbever</a>, 2015</p>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55630163-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
