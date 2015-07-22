@@ -45,9 +45,30 @@
         <p class="text-center">
           <a class="btn btn-primary" href="#papers" role="button">Read the papers</a>
           <a class="btn btn-info" href="#presentations" role="button">Look at the presentations</a>
+          <a class="btn btn-primary" data-toggle="modal" data-target="#videoModal" role="button">Watch the demo</a>
           <a class="btn btn-success" href="https://github.com/fibbing/" role="button">Get the code</a>
         </p>
       </div>
+
+        <style type="text/css">
+          video {
+            position:absolute;
+            left:0;
+            right:0;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:3%;
+            margin-bottom:auto;
+        } 
+        </style>
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
+               <video width="1280" height="720" controls="controls">
+                  <source src="files/fibbing.mp4" type="video/mp4" />
+                  You browser does not support the playback of this video,
+                  you can however download it by <a href="files/fibbing.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
+                </video> 
+        </div>
 
       <div class="row marketing">
         <div class="col-lg-6">
