@@ -18,6 +18,10 @@ h2 {
 	font-size: 26px
 }
 
+.btn {
+    margin: 2px;
+}
+
 pre {
 	padding: 1.5px 15px 1.5px;
 	margin:1px 0px 1px 0px;
