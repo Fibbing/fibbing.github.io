@@ -138,31 +138,31 @@
         </div>
 
           <dl>
-            <dt><p>Is Fibbing a long-term solution? <em>Yes</em></p></dt>
+            <dt><p>Is Fibbing a long-term solution? <p class="text-danger"><em>Yes</em></p> </p></dt>
 
             <dd><p>We believe Fibbing is here to stay. In the short run, Fibbing offers programmability and is easy to deploy, at very little cost. A network that ultimately needs even greater flexibility could deploy finer-grained SDN functionality at the edge, and solutions like Fibbing in the core. By combining the best of centralized and distributed routing, Fibbing fits the needs of the network core (flexibility, robustness, low overhead) better than current forwarding paradigms.
           </dl>
 
           <dl>
-            <dt><p>Does Fibbing makes networks harder to debug? <em>No</em></p></dt>
+            <dt><p>Does Fibbing makes networks harder to debug? <p class="text-danger"><em>No</em></p> </p></dt>
 
             <dd><p>Fibbing relies on ``tried and true'' protocols. This has several implications. First, Fibbing routing matches the current mental model of operators, a major advantage with respect to other SDN proposals. Moreover, Fibbing is compatible with any existing management, monitoring, and debugging tools. Finally, the Fibbing controller can expose a higher-level interface for debugging, including a mapping between the injected lies and their usage (matched requirements and how).</p>
          </dl>
 
           <dl>
-            <dt><p>Does Fibbing sum the complexities of centralized and distributed approaches? <em>No</em></p></dt>
+            <dt><p>Does Fibbing sum the complexities of centralized and distributed approaches? <p class="text-danger"><em>No</em></p> </p></dt>
 
             <dd><p>Fibbing uses the underlying IGP in a very simple way. The IGP output is easy to predict and provides the controller with a powerful API to program routers. As a result, the design of the Fibbing controller is significantly simpler than for existing SDN controllers since heavy tasks such as path computation and topology maintenance are offloaded to the routers. Even basic primitives for controller replication and replica consistency are mainly delegated to current distributed routing protocols.</p>
          </dl>
 
           <dl>
-            <dt><p>Does Fibbing impact security? <em>No</em></p></dt>
+            <dt><p>Does Fibbing impact security? <p class="text-danger"><em>No</em></p> </p></dt>
 
             <dd><p>The lies introduced by the Fibbing controller can easily be authenticated, like using MD5-based authentication.</p>
          </dl>
 
           <dl>
-            <dt><p>Does Fibbing support service chaining and middleboxing? <em>Partially</em></p></dt>
+            <dt><p>Does Fibbing support service chaining and middleboxing? <p class="text-danger"><em>Partially</em></p> </p></dt>
 
             <dd><p>Fibbing can only program loop-free paths. However, forwarding loops can be encountered when steering traffic through a chain of middleboxes. These requirements \emph{can} be satisfied in Fibbing with local support from routers to break the loops.  For instance, a router could match on the input interface in addition to the destination IP address using policy-based routing, a feature widely available on existing routers and provisioned centrally using BGP flowspec. Alternatively, middlebox traffic steering could be implemented through SDN functionality at the network edge, while still using Fibbing in the core.</p>
          </dl>
