@@ -164,7 +164,7 @@
           <dl>
             <dt><p>Does Fibbing support service chaining and middleboxing? <span class="text-danger"><em>Partially</em></span> </p></dt>
 
-            <dd><p>Fibbing can only program loop-free paths. However, forwarding loops can be encountered when steering traffic through a chain of middleboxes. These requirements \emph{can} be satisfied in Fibbing with local support from routers to break the loops.  For instance, a router could match on the input interface in addition to the destination IP address using policy-based routing, a feature widely available on existing routers and provisioned centrally using BGP flowspec. Alternatively, middlebox traffic steering could be implemented through SDN functionality at the network edge, while still using Fibbing in the core.</p>
+            <dd><p>Fibbing can only program loop-free paths. However, forwarding loops can be encountered when steering traffic through a chain of middleboxes. These requirements <em>can</em> be satisfied in Fibbing with local support from routers to break the loops.  For instance, a router could match on the input interface in addition to the destination IP address using policy-based routing, a feature widely available on existing routers and provisioned centrally using BGP flowspec. Alternatively, middlebox traffic steering could be implemented through SDN functionality at the network edge, while still using Fibbing in the core.</p>
          </dl>
 
 
