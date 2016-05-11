@@ -1,0 +1,2 @@
+bbb_lowres.ts filter=lfs diff=lfs merge=lfs -text
+sintel_lowres.ts filter=lfs diff=lfs merge=lfs -text
