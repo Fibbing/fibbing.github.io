@@ -43,6 +43,7 @@
         <br />
         
         <div class="bs-callout bs-callout-danger">
+            <p class="lead"><b>Fibbing</b> will be presented at <a href="https://www.ietf.org/meeting/97/">IETF 97 in Seoul</a>, for an Applied Networking Research Prize talk!</p>
             <p class="lead" style="color:#d9534f;"><b>Fibbing</b> won the Best Paper Award at <a href="http://conferences.sigcomm.org/sigcomm/2015/program.php">SIGCOMM 2015</a>!</p>
         </div>
         
@@ -173,8 +174,24 @@
           <h3>Publications</h3>
         </div>
 
+        <!-- Video Modal -->
+        <div class="modal fade" id="ecmpvideoModal" tabindex="-1" role="dialog">
+               <video width="1280" height="720" controls="controls">
+                  <source src="files/ecmp-demo/ecmp-demo.mp4" type="video/mp4" />
+                  You browser does not support the playback of this video,
+                  you can however download it by <a href="files/ecmp-demo/ecmp-demo.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
+                </video> 
+        </div>
+
         <blockquote>
-          <p><a href="files/sig15.pdf">Central Control Over Distributed Routing</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/">SIGCOMM</a>, London, UK, Aug 2015. <span class="text-danger"><em>Selected as Best Paper</em></span>. (<a href="files/sig15.bib">bibtex</a>)</p>
+          <p><a href="files/sig16_ecmp.pdf">Fibbing in action: On-demand load-balancing for better video delivery</a>,
+          <a href="http://conferences.sigcomm.org/sigcomm/2016/">SIGCOMM'16 (Demo)</a>, Florianopolis, Brazil, Aug 2016.
+          (<a href="files/sig16.bib">bibtex</a>, <a href="files/sig16_poster.pdf">poster</a>, <a data-toggle="modal" data-target="#ecmpvideoModal" role="button">video demo</a>)</p>
+          <p class="text-right text-muted">by Olivier Tilmans, Stefano Vissicchio, Laurent Vanbever, and Jennifer Rexford</p>
+        </blockquote>
+
+        <blockquote>
+          <p><a href="files/sig15.pdf">Central Control Over Distributed Routing</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/">SIGCOMM'15</a>, London, UK, Aug 2015. <span class="text-danger"><em>Selected as Best Paper</em></span>. (<a href="files/sig15.bib">bibtex</a>)</p>
           <p class="text-right text-muted">by Stefano Vissicchio, Olivier Tilmans, Laurent Vanbever, and Jennifer Rexford</p>
         </blockquote>
 
@@ -246,9 +263,9 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-55630163-1', 'auto');
+  ga('create', 'UA-83303322-1', 'auto');
   ga('send', 'pageview');
 
 </script>
