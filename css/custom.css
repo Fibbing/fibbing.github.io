@@ -25,6 +25,11 @@ video {
     border-bottom: 1px solid #f0ad4e;
     font-size: 14px;
     font-weight: bold;
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
 .nav-link {
@@ -33,6 +38,15 @@ video {
 
 .nav-elem:hover {
     background-color: #f0ad4e;
+
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition-timing-function: cubic-bezier(0.55, 2, 0.4, -0.3);
+    transition-timing-function: cubic-bezier(0.55, 2, 0.4, -0.3);
+}
+
+.nav-elem > .active {
+    background: #f0ad4e;
 }
 
 .nav-elem + .nav-elem {
@@ -44,6 +58,10 @@ video {
 }
 
 .nav-link:hover {
+    background-color: #5bc0de;
+}
+
+.nav-link > .active {
     background-color: #5bc0de;
 }
 
