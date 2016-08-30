@@ -24,10 +24,24 @@ video {
 .nav-elem {
     border-bottom: 1px solid #f0ad4e;
     margin-left: 8px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.nav-elem:not(.nav-link):hover {
+.nav-link {
+    border-bottom: 1px solid #5bc0de;
+}
+
+.nav-elem:hover {
     background-color: #f0ad4e;
+}
+
+.nav-link:hover {
+    background-color: #5bc0de;
+}
+
+.nav-container {
+    background-color: #e5e5e5;
 }
 
 .jumbotron h1 {
