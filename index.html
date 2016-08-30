@@ -23,6 +23,27 @@
     <![endif]-->
   </head>
 
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container fluid">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li class="nav-elem"><a href="#">About Fibbing</a></li>
+              <li class="nav-elem"><a href="#papers">Read the papers</a></li>
+              <li class="nav-elem"><a href="#presentations">Look at the presentations</a></li>
+          </ul>
+          <ul class="nav navbar-right">
+              <li class="nav-elem nav-link"><a href="https://github.com/fibbing/">Get the code</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
   <body>
     <div class="container">
 
@@ -41,30 +62,21 @@
 
         <p class="text-center voffset5"><img width="350" src="pictures/gadget_firewall_right.jpg"></p>
         <br />
-        
-        <div class="bs-callout bs-callout-danger">
-            <p class="lead"><b>Fibbing</b> will be presented at <a href="https://www.ietf.org/meeting/97/">IETF 97 in Seoul</a>, for an Applied Networking Research Prize talk!</p>
-            <p class="lead" style="color:#d9534f;"><b>Fibbing</b> won the Best Paper Award at <a href="http://conferences.sigcomm.org/sigcomm/2015/program.php">SIGCOMM 2015</a>!</p>
-        </div>
-        
         <p class="text-center">
-          <a class="btn btn-primary" href="#papers" role="button">Read the papers</a>
-          <a class="btn btn-info" href="#presentations" role="button">Look at the presentations</a><br/>
-          <a class="btn btn-warning" data-toggle="modal" data-target="#videoModal" role="button">Watch the demo</a>
-          <a class="btn btn-success" href="https://github.com/fibbing/" role="button">Get the code</a>
+            <a class="btn btn-warning" data-toggle="modal" data-target="#videoModal" role="button">Watch the demo</a>
         </p>
       </div>
+        
+        <div class="bs-callout bs-callout-warning">
+            <p class="lead"><b>Fibbing</b> will be presented at <a href="https://www.ietf.org/meeting/97/">IETF 97 in Seoul</a>,</br>during an Applied Networking Research Prize invited talk!</p>
+        </div>
+        
+        <div class="bs-callout bs-callout-danger">
+            <p class="lead" style="color:#d9534f;"><b>Fibbing</b> won the Best Paper Award at <a href="http://conferences.sigcomm.org/sigcomm/2015/program.php">SIGCOMM 2015</a>!</p>
+        </div>
 
         <style type="text/css">
-          video {
-            position:absolute;
-            left:0;
-            right:0;
-            margin-left:auto;
-            margin-right:auto;
-            margin-top:3%;
-            margin-bottom:auto;
-        } 
+
         </style>
         <!-- Video Modal -->
         <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
@@ -177,7 +189,7 @@
         <!-- Video Modal -->
         <div class="modal fade" id="ecmpvideoModal" tabindex="-1" role="dialog">
                <video width="1280" height="720" controls="controls">
-                  <source src="files/ecmp-demo/ecmp-demo.mp4" type="video/mp4" />
+                  <source src="https://github.com/Fibbing/fibbing.github.io/blob/master/files/ecmp-demo/ecmp-demo.mp4?raw=true" type="video/mp4" />
                   You browser does not support the playback of this video,
                   you can however download it by <a href="files/ecmp-demo/ecmp-demo.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
                 </video> 
@@ -249,10 +261,6 @@
           <li><a href="https://www.cs.princeton.edu/~jrex/">Jennifer Rexford</a>, Princeton University, <code>jrex at cs dot princeton dot edu</code></li>
         </ul>
       </section>
-
-<div class="footer voffset4">
-  <p class="text-right">Webmaster: <a href="http://www.vanbever.eu">Laurent Vanbever</a>, 2015</p>
-</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
