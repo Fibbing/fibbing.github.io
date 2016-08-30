@@ -23,7 +23,6 @@ video {
 
 .nav-elem {
     border-bottom: 1px solid #f0ad4e;
-    margin-left: 8px;
     font-size: 14px;
     font-weight: bold;
 }
@@ -34,6 +33,10 @@ video {
 
 .nav-elem:hover {
     background-color: #f0ad4e;
+}
+
+.nav-elem + .nav-elem {
+    margin-left: 8px;
 }
 
 .nav-link:hover {
