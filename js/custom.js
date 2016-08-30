@@ -31,6 +31,7 @@ nav.find('a').on('click', function () {
     scrollTop: $(id).offset().top - nav_height
   }, 500);
 
+  nav.find('a').removeClass('active');
   $el.addClass('active');
   $el.blur();
  

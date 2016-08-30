@@ -33,24 +33,47 @@
       </button>
         <div class="collapse navbar-collapse" id="bs-navbar-collapse">
           <ul class="nav navbar-nav">
-              <li class="nav-elem"><a class ="active" href="#about">About Fibbing</a></li>
-              <li class="nav-elem"><a href="#faq">FAQ</a></li>
-              <li class="nav-elem"><a href="#papers">Read the papers</a></li>
-              <li class="nav-elem"><a href="#presentations">Look at the presentations</a></li>
+              <li class="nav-elem bubble"><a class ="active" href="#about">About Fibbing</a></li>
+              <li class="nav-elem bubble"><a href="#faq">FAQ</a></li>
+              <li class="nav-elem bubble"><a href="#papers">Read the papers</a></li>
+              <li class="nav-elem bubble"><a href="#presentations">Look at the presentations</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle nav-elem bubble" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Watch it in action! <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a class="nav-elem bubble" data-toggle="modal" data-target="#videoModal">Play an introduction to Fibbing</a></li>
+                    <li><a class="nav-elem bubble" data-toggle="modal" data-target="#ecmpvideoModal">Play an example application</a></li>
+                  </ul>
+              </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-              <li class="nav-elem nav-link"><a href="https://github.com/fibbing/">Get the code &#10162;</a></li>
+              <li class="nav-elem nav-link bubble"><a href="https://github.com/fibbing/">Get the code &#10162;</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
   <body>
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
+           <video width="1280" height="720" controls="controls">
+              <source src="files/fibbing.mp4" type="video/mp4" />
+              You browser does not support the playback of this video,
+              you can however download it by <a href="files/fibbing.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
+            </video> 
+    </div>
+
+    <div class="modal fade" id="ecmpvideoModal" tabindex="-1" role="dialog">
+           <video width="1280" height="720" controls="controls">
+              <source src="https://github.com/Fibbing/fibbing.github.io/blob/master/files/ecmp-demo/ecmp-demo.mp4?raw=true" type="video/mp4" />
+              You browser does not support the playback of this video,
+              you can however download it by <a href="files/ecmp-demo/ecmp-demo.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
+            </video> 
+    </div>
+
     <div class="container">
     <section id="about">
 
       <div class="text-center lead">
-        <h3><span class="text-danger">Fibbing: Small Lies for Better Networks</span></h3>
+        <h1><span class="text-danger">Fibbing: Small Lies for Better Networks</span></h1>
       </div>
 
       <p></p>
@@ -63,10 +86,6 @@
         <p class="voffset4"><b>Fibbing</b> introduces fake nodes and links into an underlying link-state routing protocol, so that routers compute their own forwarding tables based on the augmented topology. Fibbing is expressive, and readily supports flexible load balancing, traffic engineering, and backup routes. Fibbing works with any unmodified routers speaking OSPF.
 
         <p class="text-center voffset5"><img width="350" src="pictures/gadget_firewall_right.jpg"></p>
-        <br />
-        <p class="text-center">
-            <a class="btn btn-warning" data-toggle="modal" data-target="#videoModal" role="button">Watch the demo</a>
-        </p>
       </div>
         
         <div class="bs-callout bs-callout-warning">
@@ -81,13 +100,7 @@
 
         </style>
         <!-- Video Modal -->
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog">
-               <video width="1280" height="720" controls="controls">
-                  <source src="files/fibbing.mp4" type="video/mp4" />
-                  You browser does not support the playback of this video,
-                  you can however download it by <a href="files/fibbing.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
-                </video> 
-        </div>
+
 
       <div class="row marketing">
         <div class="col-lg-6">
@@ -190,15 +203,6 @@
           <h3>Publications</h3>
         </div>
 
-        <!-- Video Modal -->
-        <div class="modal fade" id="ecmpvideoModal" tabindex="-1" role="dialog">
-               <video width="1280" height="720" controls="controls">
-                  <source src="https://github.com/Fibbing/fibbing.github.io/blob/master/files/ecmp-demo/ecmp-demo.mp4?raw=true" type="video/mp4" />
-                  You browser does not support the playback of this video,
-                  you can however download it by <a href="files/ecmp-demo/ecmp-demo.mp4">right clicking this and selecting save as ...</a> and play it locally with e.g. VLC.
-                </video> 
-        </div>
-
         <blockquote>
           <p><a href="files/sig16_ecmp.pdf">Fibbing in action: On-demand load-balancing for better video delivery</a>,
           <a href="http://conferences.sigcomm.org/sigcomm/2016/">SIGCOMM'16 (Demo)</a>, Florianopolis, Brazil, Aug 2016.
@@ -207,7 +211,8 @@
         </blockquote>
 
         <blockquote>
-          <p><a href="files/sig15.pdf">Central Control Over Distributed Routing</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/">SIGCOMM'15</a>, London, UK, Aug 2015. <span class="text-danger"><em>Selected as Best Paper</em></span>. (<a href="files/sig15.bib">bibtex</a>)</p>
+            <p><a href="files/sig15.pdf">Central Control Over Distributed Routing</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/">SIGCOMM'15</a>, London, UK, Aug 2015.<br/>
+            <span class="text-danger"><em>Selected as Best Paper, Won an ANRP'16 Award</em></span>. (<a href="files/sig15.bib">bibtex</a>)</p>
           <p class="text-right text-muted">by Stefano Vissicchio, Olivier Tilmans, Laurent Vanbever, and Jennifer Rexford</p>
         </blockquote>
 
