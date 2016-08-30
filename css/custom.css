@@ -39,12 +39,12 @@ video {
     margin-left: 8px;
 }
 
-.nav-link:hover {
-    background-color: #5bc0de;
+.navbar-default {
+    background: #e5e5e5;
 }
 
-.nav-container {
-    background-color: #e5e5e5;
+.nav-link:hover {
+    background-color: #5bc0de;
 }
 
 .jumbotron h1 {
