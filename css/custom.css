@@ -93,6 +93,8 @@ video {
 .navbar-default,
 .dropdown-menu {
     background: #e5e5e5;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
 .jumbotron h1 {
